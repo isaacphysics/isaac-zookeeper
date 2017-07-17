@@ -1,0 +1,13 @@
+version: "2"
+services:
+  zookeeper:
+    network_mode: host
+    container_name: zookeeper
+    image: ucamcldtg/zookeeper
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /local/data/zookeeper:/zookeeper-data:rw
+      - ./zoo.cfg:/opt/zookeeper/conf/zoo.cfg:ro
+
