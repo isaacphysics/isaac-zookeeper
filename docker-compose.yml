@@ -4,6 +4,11 @@ services:
     network_mode: host
     container_name: zookeeper
     image: ucamcldtg/zookeeper
+    restart: always
+    logging:
+      driver: journald
+      options:
+        tag: zookeeper
     build:
       context: .
       dockerfile: Dockerfile
